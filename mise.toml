@@ -58,4 +58,8 @@ run = "python rgr/8.py"
 
 [tasks.lint]
 description = "Lint the code"
-run = "ruff ./"
+run = "ruff check --fix"
+
+[tasks.format]
+description = "Format the code"
+run = "ruff format"
