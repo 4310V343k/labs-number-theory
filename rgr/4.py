@@ -5,16 +5,18 @@ import math
 # y = -0.4 - sin(x)
 
 
-def phi_x(x, y):
+def phi_x(x: float, y: float) -> float:
     return 0.5 * math.cos(y + 1)
 
 
-def phi_y(x, y):
+def phi_y(x: float, y: float) -> float:
     return -0.4 - math.sin(x)
 
 
-def simple_iteration(x0, y0, eps, seidel=False):
-    print(f"=== Метод { 'Зейделя' if seidel else 'простой итерации' } ===")
+def simple_iteration(
+    x0: float, y0: float, eps: float, seidel=False
+) -> tuple[float, float] | None:
+    print(f"=== Метод {'Зейделя' if seidel else 'простой итерации'} ===")
     print(f"Требуемая точность: eps = {eps}")
     print(f"Начальное приближение: x0 = {x0}, y0 = {y0}\n")
 
@@ -49,32 +51,32 @@ def simple_iteration(x0, y0, eps, seidel=False):
 # f2(x, y) = y + sin(x) + 0.4 = 0
 
 
-def f1(x, y):
+def f1(x: float, y: float) -> float:
     return 2 * x - math.cos(y + 1)
 
 
-def f2(x, y):
+def f2(x: float, y: float) -> float:
     return y + math.sin(x) + 0.4
 
 
 # Частные производные (для матрицы Якоби)
-def df1_dx(x, y):
+def df1_dx(x: float, y: float) -> float:
     return 2.0
 
 
-def df1_dy(x, y):
+def df1_dy(x: float, y: float) -> float:
     return math.sin(y + 1)
 
 
-def df2_dx(x, y):
+def df2_dx(x: float, y: float) -> float:
     return math.cos(x)
 
 
-def df2_dy(x, y):
+def df2_dy(x: float, y: float) -> float:
     return 1.0
 
 
-def newton_method(x0, y0, eps):
+def newton_method(x0: float, y0: float, eps: float) -> tuple[float, float] | None:
     print("=== Метод Ньютона (для систем) ===")
     print(f"Требуемая точность: eps = {eps}")
     print(f"Начальное приближение: x0 = {x0}, y0 = {y0}\n")
@@ -85,7 +87,7 @@ def newton_method(x0, y0, eps):
     while True:
         F1 = f1(x_prev, y_prev)
         F2 = f2(x_prev, y_prev)
-        
+
         # Определитель матрицы Якоби
         # J = [
         #   [df1/dx, df1/dy]
@@ -107,7 +109,7 @@ def newton_method(x0, y0, eps):
         #   [J22, -J12],
         #   [-J21, J11]
         # ]
-        
+
         # Разность приближений: [dx, dy] = J_inv * [F1, F2]
 
         dx = (F1 * J22 - J12 * F2) / detJ

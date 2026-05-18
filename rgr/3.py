@@ -1,9 +1,11 @@
-def simple_iteration(C, d, eps, seidel=False):
+def simple_iteration(C: list[list[float]], d: list[float], eps: float, seidel=False):
     n = len(d)
 
-    print(f"=== Метод {'Зейделя' if seidel else 'простой итерации'} (СЛАУ x = Cx + d) ===")
+    print(
+        f"=== Метод {'Зейделя' if seidel else 'простой итерации'} (СЛАУ x = Cx + d) ==="
+    )
     print(f"Требуемая точность: eps = {eps}")
-    
+
     # В качестве начального приближения берем свободный член (x0 = d)
     x_prev = d.copy()
 
