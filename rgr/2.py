@@ -21,7 +21,9 @@ def newton_method(x0: float, eps: float) -> float:
 
         print(f"Шаг {step}:")
         print(f"  x_{step - 1} = {x_prev:.6f}, f(x_{step - 1}) = {fx:.6f}")
-        print(f"  x_{step} = x_{step - 1} - f(x_{step - 1}) / f'(x_{step - 1}) = {x_curr:.6f}")
+        print(
+            f"  x_{step} = x_{step - 1} - f(x_{step - 1}) / f'(x_{step - 1}) = {x_curr:.6f}"
+        )
         print(f"  Разность приближений |x_i - x_{{i-1}}| = {diff:.6f}")
 
         if diff <= eps:
