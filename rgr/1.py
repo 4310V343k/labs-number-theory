@@ -14,14 +14,14 @@ def bisection(g: callable, a: float, b: float, eps: float) -> float | None:
         return None
 
     step = 1
-    while (b - a) / 2 > eps: # 
+    while (b - a) / 2 > eps:  #
         c = (a + b) / 2
         fc = g(c)
         print(f"Шаг {step}:")
         print(f"  a = {a:.6f}, f(a) = {g(a):.6f}")
         print(f"  b = {b:.6f}, f(b) = {g(b):.6f}")
         print(f"  c = (a+b)/2 = {c:.6f}, f(c) = {fc:.6f}")
-        print(f"  Текущая погрешность (b-a)/2 = {(b - a) / 2:.6f}")
+        print(f"  Достигнутая точность (b-a)/2 = {(b - a) / 2:.6f}")
 
         if fc == 0.0:
             print("  Найден точный корень!")
@@ -37,7 +37,7 @@ def bisection(g: callable, a: float, b: float, eps: float) -> float | None:
         step += 1
 
     root = (a + b) / 2
-    print(f"\nТекущая погрешность: {(b - a) / 2:.6f} <= eps ({eps})")
+    print(f"\nДостигнутая точность: {(b - a) / 2:.6f} <= eps ({eps})")
     print(f"Корень: x ~ {root:.6f}")
     print(f"Значение функции в корне: f(x) ~ {g(root):.6f}")
     print(f"Количество шагов: {step - 1}")
