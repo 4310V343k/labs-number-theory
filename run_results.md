@@ -2,6 +2,7 @@
 
 ## rgr/
 
+### 1.py - [code](./rgr/1.py)
 <details>
     <summary>1.py</summary>
 
@@ -88,6 +89,8 @@
 
 </details>
 
+### 2.py - [code](./rgr/2.py)
+
 <details>
     <summary>2.py</summary>
 
@@ -160,6 +163,8 @@
 
 </details>
 
+### 3.py - [code](./rgr/3.py)
+
 <details>
     <summary>3.py</summary>
 
@@ -201,6 +206,8 @@
 ```
 
 </details>
+
+### 4.py - [code](./rgr/4.py)
 
 <details>
     <summary>4.py</summary>
@@ -287,6 +294,8 @@
 
 </details>
 
+### 5.py - [code](./rgr/5.py)
+
 <details>
     <summary>5.py</summary>
 
@@ -295,6 +304,8 @@ tbd
 ```
 
 </details>
+
+### 6.py - [code](./rgr/6.py)
 
 <details>
     <summary>6.py</summary>
@@ -322,6 +333,8 @@ x[1] = 1, f(x[1]) = 12
 ```
 
 </details>
+
+### 7.py - [code](./rgr/7.py)
 
 <details>
     <summary>7.py</summary>
@@ -355,6 +368,8 @@ x[1] = 1, f(x[1]) = 12
 ```
 
 </details>
+
+### 8.py - [code](./rgr/8.py)
 
 <details>
     <summary>8.py</summary>
