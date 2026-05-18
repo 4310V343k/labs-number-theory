@@ -1,6 +1,9 @@
-def simple_iteration(C, d, eps):
+def simple_iteration(C, d, eps, seidel=False):
     n = len(d)
 
+    print(f"=== Метод {'Зейделя' if seidel else 'простой итерации'} (СЛАУ x = Cx + d) ===")
+    print(f"Требуемая точность: eps = {eps}")
+    
     # В качестве начального приближения берем свободный член (x0 = d)
     x_prev = d.copy()
 
@@ -11,11 +14,15 @@ def simple_iteration(C, d, eps):
     max_iter = 1000  # защита от бесконечного цикла
 
     while step <= max_iter:
-        x_curr = [0.0] * n
+        x_curr = x_prev.copy()
+
+        # Для метода Зейделя для послед. вычислений используем
+        # уже обновленные значения в x_curr, для простой итерации - x_prev
+        vector = x_curr if seidel else x_prev
 
         # Вычисляем x_k = C * x_{k-1} + d
         for i in range(n):
-            s = sum(C[i][j] * x_prev[j] for j in range(n))
+            s = sum(C[i][j] * vector[j] for j in range(n))
             x_curr[i] = s + d[i]
 
         # Находим норму разности (максимальное отклонение по модулю)
@@ -56,7 +63,6 @@ if __name__ == "__main__":
     # Вектор столбец d
     d = [-1.0, -1.0, 2.0, 0.1]
 
-    print("=== Метод простой итерации (СЛАУ x = Cx + d) ===")
-    print(f"Требуемая точность: eps = {eps}\n")
-
     simple_iteration(C, d, eps)
+    print("\n")
+    simple_iteration(C, d, eps, seidel=True)
