@@ -1,0 +1,61 @@
+min_version = "2024.9.5"
+
+[settings]
+jobs = 1
+
+[env]
+_.python.venv = { path = ".venv", create = true }
+
+[tools]
+python = "3.12"
+ruff = "latest"
+uv = "latest"
+
+[tasks.install]
+description = "Install dependencies"
+alias = "i"
+run = "uv pip install -r requirements.txt"
+
+[tasks."rgr:1"]
+description = "Run rgr/1.py"
+alias = "r1"
+run = "python rgr/1.py"
+
+[tasks."rgr:2"]
+description = "Run rgr/2.py"
+alias = "r2"
+run = "python rgr/2.py"
+
+[tasks."rgr:3"]
+description = "Run rgr/3.py"
+alias = "r3"
+run = "python rgr/3.py"
+
+[tasks."rgr:4"]
+description = "Run rgr/4.py"
+alias = "r4"
+run = "python rgr/4.py"
+
+[tasks."rgr:5"]
+description = "Run rgr/5.py"
+alias = "r5"
+run = "python rgr/5.py"
+
+[tasks."rgr:6"]
+description = "Run rgr/6.py"
+alias = "r6"
+run = "python rgr/6.py"
+
+[tasks."rgr:7"]
+description = "Run rgr/7.py"
+alias = "r7"
+run = "python rgr/7.py"
+
+[tasks."rgr:8"]
+description = "Run rgr/8.py"
+alias = "r8"
+run = "python rgr/8.py"
+
+[tasks.lint]
+description = "Lint the code"
+run = "ruff ./"
